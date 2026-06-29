@@ -1,0 +1,22 @@
+# Exclude folders that are not needed in the image
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+.git/
+.gitignore
+.vscode/
+
+# Exclude large data files or local databases
+data/
+chroma_db/
+*.log
+*.tmp
+
+# Exclude the Docker files themselves
+.dockerignore
+Dockerfile
