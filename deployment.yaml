@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: financial-assistant-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: financial-assistant
+  template:
+    metadata:
+      labels:
+        app: financial-assistant
+    spec:
+      containers:
+      - name: financial-assistant
+        image: 606465990049.dkr.ecr.us-east-1.amazonaws.com/devops_capstone:latest
+        env:
+        - name: GOOGLE_API_KEY
+          value: YOUR_GOOGLE_API_KEY
+        ports:
+        - containerPort: 8501
