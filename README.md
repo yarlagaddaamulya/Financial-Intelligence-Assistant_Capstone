@@ -26,3 +26,24 @@ Clone the repository: git clone <your-repository-url>
 Environment Setup: Ensure your Python environment is configured with the dependencies listed in requirements.txt.
 
 Deployment: The application is designed to be deployed to a Kubernetes cluster using the provided deployment.yaml and service.yaml files.
+
+winget install eksctl
+
+eksctl version
+
+eksctl create cluster `
+  --name financial-assistant-cluster `
+  --region us-east-1 `
+  --nodegroup-name standard-workers `
+  --node-type t3.medium `
+  --nodes 2 `
+  --managed
+
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+
+kubectl get nodes
+
+kubectl get pods
+
+kubectl get services
